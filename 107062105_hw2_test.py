@@ -42,8 +42,8 @@ def preprocess_state(state):
 
 class Agent:
     def __init__(self):
-        # self.state_size = state_size
-        # self.action_size = action_size
+        self.state_size = int(240*256/4)
+        self.action_size = 12
         self.memory = deque(maxlen=1000000)
         self.gamma = 0.95    # discount rate
         self.epsilon = 1.0  # exploration rate
@@ -83,6 +83,7 @@ class Agent:
         self.memory.append((state, action, reward, next_state, done))
 
     def act(self, state):
+        state = preprocess_state(state)
         if np.random.rand() <= self.epsilon:
             action_list = list(range(12))  # List of integers from 0 to 11
             weights = [0.05, 0.1, 0.1, 0.1, 0.1, 0.1, 0.05, 0.05, 0.05, 0.05, 0.1, 0.1]
