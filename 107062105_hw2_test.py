@@ -40,7 +40,7 @@ def preprocess_state(state):
     # print('resize state shape',grayscale_state.shape)
     return grayscale_state
 
-class DQNAgent:
+class Agent:
     def __init__(self):
         # self.state_size = state_size
         # self.action_size = action_size
