@@ -53,7 +53,7 @@ class Agent:
         self.model = self._build_model()
         self.target_model = self._build_model()
         self.update_target_model()
-        self.load("./mario-ddqn.h5")
+        self.load("./107062105_hw2_data.h5")
 
 
     def _huber_loss(self, y_true, y_pred, clip_delta=1.0):
